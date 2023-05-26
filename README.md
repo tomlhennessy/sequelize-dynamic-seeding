@@ -126,7 +126,7 @@ these records include:
      and last name data with a `bandId` attribute from the queried `Band`
   3. Compiling a list of `Musician` objects that need to be created, with their
      `firstName`, `lastName`, and `bandId` attributes, then passing that list to
-     the `bulkInsert` function
+     the `Musician.bulkCreate` function
   4. Many alternative approaches!
 
 For this practice, take the first approach. Iterate over each band in the
@@ -147,7 +147,9 @@ accomplishing this goal. Viable options include:
   1. Iterate over the `bandMusicians` array and execute a `DELETE` query for
      each `Musician` in the nested `musicians` arrays.
   2. Manipulate the `bandMusicians` array's structure, perhaps with a `reduce`
-     function, to combine each nested `musicians` array and utilize this data in a `bulkDelete` function call to the `Musicians` table.
+     function, to combine each nested `musicians` array and utilize this data
+     in a `queryInterface.bulkDelete` function call to delete from the
+     `Musicians` table.
   3. Many alternative approaches!
 
 For this practice, take the first approach. Iterate over each band in the
@@ -263,7 +265,8 @@ these records include:
      rather than by `Musician`)
   3. Compiling a list of `MusicianInstrument` objects that need to be created,
      with their `musicianId` and `instrumentId` attributes coming from the
-     queried instances, then passing that list to the `bulkInsert` function
+     queried instances, then passing that list to the
+     `MusicianInstrument.bulkCreate` function
   4. Many alternative approaches!
 
 For this practice, take the first approach. Iterate over each musician in the
@@ -285,7 +288,9 @@ accomplishing this goal. Viable options include:
      `Instrument` instances
   2. Compiling a list of `MusicianInstrument` objects that need to be deleted,
      with their `musicianId` and `instrumentId` attributes coming from the
-     queried instances, then passing that list to the `bulkDelete` function
+     queried instances, then passing that list to the
+     `queryIntreface.bulkDelete` function to delete from the `MusicianInstruments`
+     table
   3. Many alternative approaches!
 
 For this practice, take the first approach. You will need to use the same method
